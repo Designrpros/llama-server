@@ -27,7 +27,7 @@ pub fn download<'a, W: AsyncWrite + Unpin>(
 ) -> impl Straw<(), Progress, Error> + 'a {
     use tokio::io::AsyncWriteExt;
 
-    sipper(move |mut progress| async move {
+    sipper(async move |mut progress| {
         let mut download = client().get(url).send().await?;
         let start = Instant::now();
         let total = download.content_length().unwrap_or_default();
