@@ -243,10 +243,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download Windows ROCm release
-        run: curl -LO https://github.com/ggml-org/llama.cpp/releases/download/${{ needs.find.outputs.build }}/llama-${{ needs.find.outputs.build }}-bin-win-rocm-7.14-x64.zip
+        run: curl -LO https://github.com/ggml-org/llama.cpp/releases/download/${{ needs.find.outputs.build }}/llama-${{ needs.find.outputs.build }}-bin-win-rocm-10.0-x64.zip
 
       - name: Unzip Windows ROCm release
-        run: unzip llama-${{ needs.find.outputs.build }}-bin-win-rocm-7.14-x64.zip
+        run: unzip llama-${{ needs.find.outputs.build }}-bin-win-rocm-10.0-x64.zip
 
       - name: Pack Windows ROCm backend
         run: |
