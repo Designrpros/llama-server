@@ -38,6 +38,12 @@ impl Artifact {
 #[cfg(all(target_os = "linux", target_arch = "x86_64"))]
 const PLATFORM: &str = "linux-x64";
 
+// PeakOS (Designrpros mirror, 25 Nov 2026): an arm64 Linux build machine compiles this crate
+// too. The releases have no linux-arm64 artifact yet, so a download there fails with the
+// HTTP error rather than the build failing to compile.
+#[cfg(all(target_os = "linux", target_arch = "aarch64"))]
+const PLATFORM: &str = "linux-arm64";
+
 #[cfg(all(target_os = "macos", target_arch = "x86_64"))]
 const PLATFORM: &str = "macos-x64";
 
